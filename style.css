@@ -1,0 +1,128 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    max-width: 768px;
+    margin: 0 auto; /* 自动左右边距以居中 */
+    padding: 0;
+    box-sizing: border-box; /* 使内边距和边框包含在宽度内 */
+    background-color: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+span, p {
+    color: #424142;
+}
+
+header {
+    height: clamp(8.5rem, 100vw / 4.5, 17rem);
+    padding-left: clamp(1.6rem, 100vw / 23.7, 3.2rem);
+    padding-right: clamp(1.6rem, 100vw / 23.7, 3.2rem);
+    background-color: lightblue;
+}
+header .logoImage {
+    width: clamp(6.4rem, 100vw / 5.93, 12.8rem);
+    margin-top: clamp(1.6rem, 100vw / 23.7, 3.2rem);
+    margin-bottom: clamp(0.2em, 100vw / 190, 0.4rem);;
+}
+
+header .navigation {
+    display: flex;
+    /* background-color: yellow; */
+    height: clamp(4.5rem, 100vw / 8, 9rem);
+    align-items: center;
+    justify-content: space-between;
+    margin-left: clamp(0.4rem, 100vw / 101.5, 0.8rem);
+}
+
+.navigation .btn-with-arrow {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    width: clamp(5rem, 100vw / 7.59, 10rem);
+    height: clamp(2rem, 100vw / 22, 4rem);
+}
+
+.arrow-icon {
+    width: clamp(1.2rem, 100vw / 31.625, 2.4rem);
+    height: clamp(1.2rem, 100vw / 31.625, 2.4rem);
+}
+
+.btn-back-text {
+    margin-left: 0.8rem;
+    font-size: clamp(1.4rem, 100vw / 26, 2.4rem);
+    font-weight: 500;
+}
+
+.btn-with-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: clamp(1.6rem, 100vw / 24.5, 3rem);
+    height: clamp(4rem, 100vw / 10.3, 6.8rem);
+    width: clamp(16rem, 100vw / 2.45, 30rem);
+    border: 0.5px solid #e4e5e6;
+    box-sizing: border-box; /* 使宽度和高度包括border和padding */
+    border-radius: calc(clamp(4rem, 100vw / 9.49, 8rem) / 2);
+    background-color: transparent;
+}
+
+.btn-with-toggle img {
+    width: clamp(1.8rem, 100vw / 24.5, 3.6rem);
+}
+
+.search-icon {
+    margin-left: clamp(1.2rem, 100vw / 31.6, 2.4rem);
+}
+
+.down-icon {
+    margin-right: clamp(1.2rem, 100vw / 31.6, 2.4rem);
+}
+
+.btn-type-text {
+    flex-grow: 1;
+    font-size: clamp(1.4rem, 100vw / 26, 2.4rem);
+    text-align: left;
+    margin-left: clamp(1rem, 100vw / 38, 2rem);
+    margin-right: clamp(1rem, 100vw / 38, 2rem);
+}
+
+.main-table .badge {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: clamp(1.15rem, 100vw / 35.5, 2rem);
+    font-weight: var(--font-weight-semi-bold);
+    color: white;
+    position: absolute;
+    width: clamp(2.2rem, 100vw / 20.1, 3.3rem);
+    height: clamp(2.2rem, 100vw / 20.1, 3.3rem);
+    border-radius: 50%;
+    background-color: var(--theme-minor-color);
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.second-column {
+    justify-content: center;
+}
+
+.first-image {
+    width: clamp(2.4rem, 100vw / 1.8, 400rem);
+}
+
+h1, h2 {
+    margin: 0;
+    color: var(--theme-gray-color);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 100vw / 18.1, 4rem);
+    font-weight: var(--font-weight-bold);
+}

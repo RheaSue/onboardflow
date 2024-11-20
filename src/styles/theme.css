@@ -1,0 +1,21 @@
+:root {
+    --theme-main-color: #004C97;
+    --theme-minor-color: #00A3E0;
+    --theme-5-minor-color: #00A3E015;
+    --theme-gray-color: #424142;
+    --theme-medium-gray-color: #808284;
+
+    --theme-state-red: #da291c;
+    --theme-state-blue: #00A3E0;
+    --theme-state-yellow: #febe3f;
+
+    --font-weight-thin: 100;
+    --font-weight-extra-light: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-heavy: 900;
+}
