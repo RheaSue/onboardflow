@@ -29,3 +29,14 @@ const currentLanguage = getLanguageFromURL();
 
 // 加载对应的语言
 loadLanguage(currentLanguage);
+
+
+const locales ={
+    en: {
+        back: 'Back',
+    },
+
+    fr: {
+        back: 'Regresar',
+    }
+}

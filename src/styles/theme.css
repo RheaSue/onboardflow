@@ -1,7 +1,10 @@
 :root {
     --theme-main-color: #004C97;
+    --theme-15-main-color: #004C9726;
     --theme-minor-color: #00A3E0;
     --theme-5-minor-color: #00A3E015;
+    --theme-10-minor-color: #00A3E020;
+
     --theme-gray-color: #424142;
     --theme-medium-gray-color: #808284;
     --theme-background-color: #f1f2f5;
