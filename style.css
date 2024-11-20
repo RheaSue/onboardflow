@@ -10,6 +10,12 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -22,7 +28,7 @@ header {
     height: clamp(8.5rem, 100vw / 4.5, 17rem);
     padding-left: clamp(1.6rem, 100vw / 23.7, 3.2rem);
     padding-right: clamp(1.6rem, 100vw / 23.7, 3.2rem);
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 header .logoImage {
     width: clamp(6.4rem, 100vw / 5.93, 12.8rem);
@@ -32,11 +38,30 @@ header .logoImage {
 
 header .navigation {
     display: flex;
-    /* background-color: yellow; */
     height: clamp(4.5rem, 100vw / 8, 9rem);
     align-items: center;
     justify-content: space-between;
     margin-left: clamp(0.4rem, 100vw / 101.5, 0.8rem);
+    margin-right: clamp(0.4rem, 100vw / 101.5, 0.8rem);
+}
+
+main {
+    margin-left: clamp(3.2rem, 100vw / 12.26, 6rem);
+    margin-right: clamp(3.2rem, 100vw / 12.26, 6rem);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: clamp(5.6rem, 100vw / 8.15, 8rem);
+}
+
+li {
+    /* margin-bottom: clamp(5.6rem, 100vw / 24.5, 8rem); */
+    gap: clamp(5.6rem, 100vw / 24.5, 8rem);
 }
 
 .navigation .btn-with-arrow {
@@ -94,35 +119,132 @@ header .navigation {
     margin-right: clamp(1rem, 100vw / 38, 2rem);
 }
 
-.main-table .badge {
+.main-table {
+    table-layout: fixed;
+    margin-left: clamp(3.2rem, 100vw / 12.26, 6rem);
+    margin-right: clamp(3.2rem, 100vw / 12.26, 6rem);
+    background-color: whitesmoke;
+}
+
+.first-column {
+    background-color: burlywood;
+    width: clamp(2.2rem, 100vw / 19.2, 3.6rem);
+    vertical-align: top;
+}
+
+.badge {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: clamp(1.15rem, 100vw / 35.5, 2rem);
-    font-weight: var(--font-weight-semi-bold);
+    font-size: clamp(1.1rem, 100vw / 35.6, 2rem);
+    font-weight: var(--font-weight-regular);
     color: white;
     position: absolute;
-    width: clamp(2.2rem, 100vw / 20.1, 3.3rem);
-    height: clamp(2.2rem, 100vw / 20.1, 3.3rem);
+    width: clamp(2rem, 100vw / 20, 3.6rem);
+    height: clamp(2rem, 100vw / 20, 3.6rem);
     border-radius: 50%;
     background-color: var(--theme-minor-color);
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
+    /* transform: translateY(10%); */
+}
+
+.first-title {
+    font-size: clamp(2rem, 100vw / 24.5, 3.6rem);
+    font-weight: var(--font-weight-bold);
+    margin-left: calc(clamp(2rem, 100vw / 20, 3.6rem) + clamp(0.8rem, 100vw / 47.4, 1.6rem));
+    line-height: clamp(2rem, 100vw / 20, 3.6rem);
+}
+
+.first-content {
+    text-align: center;
+}
+
+.first-description {
+    text-align: left;
+    font-size: clamp(1.4rem, 100vw / 32.6, 2rem);
+    font-weight: var(--font-weight-regular);
+    margin-left: calc(clamp(2rem, 100vw / 20, 3.6rem) + clamp(0.8rem, 100vw / 47.4, 1.6rem));
+    margin-top: clamp(0.6rem, 100vw / 50, 1.2rem);
+}
+
+.first-image {
+    margin-top: clamp(2rem, 100vw / 20, 3.6rem);
+    width: clamp(24rem, 100vw / 1.8, 40rem);
 }
 
 .second-column {
     justify-content: center;
+    align-items: center;
 }
 
-.first-image {
-    width: clamp(2.4rem, 100vw / 1.8, 400rem);
+.light-status-container {
+    margin-left: calc(clamp(2rem, 100vw / 20, 3.6rem) + clamp(0.8rem, 100vw / 47.4, 1.6rem));
+    margin-top: clamp(2.4rem, 100vw / 18, 4rem);
+    background-color: var(--theme-background-color);
+    border-radius: clamp(1rem, 100vw / 38, 2rem);
+    padding: 0px 4px 30px 4px;
+}
+
+.light-status-box-3411 {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: clamp(9rem, 100vw / 4.48, 16rem);
+}
+
+.light-status-box-3411 img {
+    display: block;
+    margin-top: clamp(1.8rem, 100vw / 21, 3.6rem);
+    width: 100%;
+}
+
+.light-status-text-3411 {
+    position: absolute;
+    font-size: clamp(1rem, 100vw / 38, 1.8rem);
+    bottom: 2%;
+    left: 90%;
+}
+
+table {
+    width: 100%;
+    /* background-color: lightpink; */
+    text-align: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: none;
+    border-collapse: collapse; /* 去除单元格之间的间隙 */
+}
+
+tr {
+    border: none;
+    height: 30px;
+    padding-left: 10px;
+}
+
+td {
+    /* background-color: wheat; */
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+td:first-child {
+    /* background-color: lightblue; */
+    width: 54%;
+    padding-left: 15px;
+}
+
+tr:last-child td:first-child {
+    background-color: blue;
+    border-radius: 2px 0 0 2px;
+}
+
+tr:last-child td:last-child {
+    background-color: blue;
+    border-radius: 0 2px 2px 0;
 }
 
 h1, h2 {
     margin: 0;
     color: var(--theme-gray-color);
-}
-
-h1 {
-    font-size: clamp(2.2rem, 100vw / 18.1, 4rem);
-    font-weight: var(--font-weight-bold);
 }
