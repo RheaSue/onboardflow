@@ -8,7 +8,7 @@ function renderContent(msoName, deviceType, language) {
 		<div class="navigation">
 			<button class="btn-with-arrow">
 				<img class="arrow-icon" src="src/images/general/l_back.png" alt="arrow-icon" />
-				<span class="btn-back-text">Back</span>
+				<span class="btn-back-text">${localizedTexts.back}</span>
 			</button>
 
 			<button class="btn-with-toggle">
@@ -50,13 +50,13 @@ function renderContent(msoName, deviceType, language) {
 				<div>
 					<span class="badge">1</span>
 
-					<p class="content-title first-title">Plug into power outlet</p>
+					<p class="content-title first-title">${localizedTexts.firstTitle}</p>
 
 				</div>
 
 				<div class="content first-content">
 					<p class="first-description">
-                        Install ${deviceType} as close to the center of main floor to maximize Wi-Fi coverage.
+					${localizedTexts.firstDescription(deviceType)}
                     </p>
 
 					<img class="dynamic-image first-image" src="src/images/${msoName}/devices/sh_plug_into_outlet_${deviceType.toLowerCase()}.png" alt="${deviceType} power outlet" />
@@ -67,13 +67,13 @@ function renderContent(msoName, deviceType, language) {
 				<div>
 					<span class="badge">2</span>
 
-					<p class="content-title first-title">Keep it clear from obstructions</p>
+					<p class="content-title first-title">${localizedTexts.secondTitle}</p>
 
 				</div>
 
 				<div class="content first-content">
 					<p class="first-description">
-                        For the best Wi-Fi experience, make sure ${deviceType} is visible and not blocked by furniture or large objects.
+                        ${localizedTexts.secondDescription(deviceType)}
                     </p>
 
 					<img class="dynamic-image first-image" src="src/images/${msoName}/devices/sh_keep_it_clear_${deviceType.toLowerCase()}.png" alt="${deviceType} keep clear" />
@@ -84,50 +84,50 @@ function renderContent(msoName, deviceType, language) {
 				<div>
 					<span class="badge">3</span>
 
-					<p class="content-title first-title">Check light status</p>
+					<p class="content-title first-title">${localizedTexts.thirdTitle}</p>
 
 				</div>
 
 				<div class="content first-content">
 					<p class="first-description">
-                        The front light should be slowly blinking white to show it is ready to be paired. If not, unplug then plug the ${deviceType} back in and wait until it starts blinking white.<br /><br />If after 2 minutes it is still not blinking white, you can try to do a factory reset by holding the Reset pin-hole button for more than 10 seconds. Then, wait for the slow blinking white light before continuing.
+                        ${localizedTexts.thirdDescription(deviceType)}
                     </p>
 
 					<div class="light-status-container">
 						<div class="light-status-box-3411">
 							<img class="light-status-image" src="src/images/${msoName}/devices/sd_led_status_${deviceType.toLowerCase()}.png" alt="aria3411_light_status" />
 
-							<span class="light-status-text ${deviceType}">LED</span>
+							<span class="light-status-text ${deviceType}">${localizedTexts.led}</span>
 						</div>
 
 						<table>
 							<tr>
 								<td>
-									<p class="gray-color-text">Slow blinking <span class="minor-color-text minor-color-span">(Green)</span></p>
+									<p class="gray-color-text">${localizedTexts.slowbliking} <span class="minor-color-text minor-color-span">${localizedTexts.green}</span></p>
 								</td>
 
 								<td>
-									<p class="mid-gray-color-text">Booting</p>
-								</td>
-							</tr>
-
-							<tr>
-								<td>
-									<p class="gray-color-text">Blinking <span class="minor-color-text minor-color-span">(White, Green)</span></p>
-								</td>
-
-								<td>
-									<p class="mid-gray-color-text">Enabling Wi-Fi</p>
+									<p class="mid-gray-color-text">${localizedTexts.booting}</p>
 								</td>
 							</tr>
 
 							<tr>
 								<td>
-									<p class="gray-color-text">Slow blinking <span class="minor-color-span">(White)</span></p>
+									<p class="gray-color-text">${localizedTexts.blinking} <span class="minor-color-text minor-color-span">${localizedTexts.whiteGreen}</span></p>
 								</td>
 
 								<td>
-									<p class="gray-color-text">Ready to be paired</p>
+									<p class="mid-gray-color-text">${localizedTexts.enablingwifi}</p>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<p class="gray-color-text">${localizedTexts.slowbliking} <span class="minor-color-span">${localizedTexts.white}</span></p>
+								</td>
+
+								<td>
+									<p class="gray-color-text">${localizedTexts.readyToBePaired}</p>
 								</td>
 							</tr>
 						</table>
@@ -141,9 +141,9 @@ function renderContent(msoName, deviceType, language) {
 
 	<footer>
 		<div>
-			<span class="ultralight-text">Creating technology for</span>
+			<span class="ultralight-text">${localizedTexts.footerFirstLine}</span>
 			<br />
-			<span class="semibold-text">tomorrow's networks</span>
+			<span class="semibold-text">${localizedTexts.footerSecondLine}</span>
 			<div class="footer-line"></div>
 		</div>
 	</footer>
@@ -152,12 +152,49 @@ function renderContent(msoName, deviceType, language) {
     // 将内容插入到页面的 container 中
     document.getElementById('content-container').innerHTML = content;
 
+	backAction();
+
     // 绑定点击事件
     toggleAction(deviceType === 'ARIA2210'? 0 : 
         deviceType === 'ARIA3411'? 1 :
         deviceType === 'ARIA3625'? 2 :
         deviceType === 'ARIA3626'? 3 :  
         deviceType === 'ARIA3629'? 4 : 0);
+}
+
+function backAction() {
+	// 找到 'btn-with-arrow' 按钮
+	const backButton = document.querySelector('.btn-with-arrow');
+
+	// 添加点击事件监听器
+	backButton.addEventListener('click', () => {
+		// 与 native app 交互的函数
+		sendBackToNativeApp();
+	});
+}
+
+function sendBackToNativeApp() {
+	const message = { action: "back" };
+	try {
+		window.webkit.messageHandlers.backAction.postMessage(message);
+		return;
+	} catch (error) {
+		console.log("iOS app bridge is not available");
+	}
+    
+	try {
+		window.androidFunction.backAction(message);
+		return;
+	} catch (error) {
+		console.log("Android app bridge is not available");
+	}
+
+	try {
+		window.opener.postMessage(message);
+		return;
+	} catch (error) {
+		console.log("window bridge is not available");
+	}
 }
 
 function toggleAction(selectedItem = 0) {
