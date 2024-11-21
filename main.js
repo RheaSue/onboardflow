@@ -3,7 +3,7 @@ function renderContent(msoName, deviceType, language) {
 
     const content = `
     <header>
-		<img class="logoImage" src="src/images/${msoName}/logo.png" alt="logo" />
+		<img class="logoImage" src="src/images/${msoName}/l_logo.png" alt="logo" />
 
 		<div class="navigation">
 			<button class="btn-with-arrow">

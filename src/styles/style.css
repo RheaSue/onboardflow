@@ -31,7 +31,7 @@ span, p {
 }
 
 header {
-    height: clamp(8.5rem, 100vw / 4.5, 17rem);
+    /* height: clamp(8.5rem, 100vw / 4.5, 17rem); */
     padding-left: clamp(1.6rem, 100vw / 23.7, 3.2rem);
     padding-right: clamp(1.6rem, 100vw / 23.7, 3.2rem);
     /* background-color: lightblue; */
@@ -49,6 +49,7 @@ header .navigation {
     justify-content: space-between;
     margin-left: clamp(0.4rem, 100vw / 101.5, 0.8rem);
     margin-right: clamp(0.4rem, 100vw / 101.5, 0.8rem);
+    margin-bottom: 10px;
 }
 
 main {
