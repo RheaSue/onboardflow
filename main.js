@@ -174,6 +174,7 @@ function backAction() {
 }
 
 function sendBackToNativeApp() {
+	// alert("返回上一页");
 	const message = { action: "back" };
 	try {
 		window.webkit.messageHandlers.backAction.postMessage(message);

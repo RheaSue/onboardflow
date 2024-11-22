@@ -95,6 +95,7 @@ li {
     background-color: transparent;
     width: clamp(5rem, 100vw / 7.59, 10rem);
     height: clamp(2rem, 100vw / 22, 4rem);
+    visibility: hidden;
 }
 
 .arrow-icon {
