@@ -139,7 +139,7 @@ function renderContent(msoName, deviceType, language) {
 
 	</main>
 
-	<footer>
+	<footer style="background-image: url("/src/images/general/bg_750.png")>
 		<div>
 			<span class="ultralight-text">${localizedTexts.footerFirstLine}</span>
 			<br />
