@@ -286,7 +286,7 @@ tr:last-child td:last-child {
 
 footer {
     height: clamp(10rem, 100vw / 5.93, 17rem);
-    background-image: url("/src/images/general/bg_750.png");
+    background-image: url("../images/general/bg_750.png");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
