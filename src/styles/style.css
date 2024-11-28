@@ -217,23 +217,23 @@ li {
 
 .light-status-text {
     position: absolute;
-    font-size: clamp(1.4rem, 100vw / 32.6, 2rem);
+    font-size: clamp(1.2rem, 100vw / 31, 2.3rem);
     bottom: 2%;
     left: 90%;
 }
 
 .light-status-text.ARIA3411 {
-    bottom: 2%;
+    bottom: 0;
     left: 90%;
 }
 
 .light-status-text.ARIA2210 {
-    bottom: 3%;
+    bottom: 1.2%;
     left: 105%;
 }
 
 .light-status-text.ARIA3625, .ARIA3626, .ARIA3629 {
-    bottom: 39%;
+    bottom: 37.5%;
     left: 90%;
 }
 
