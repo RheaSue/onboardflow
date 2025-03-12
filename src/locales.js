@@ -1,6 +1,8 @@
 // 创建一个语言管理对象来加载不同的语言文件
 const locales ={
     en: {
+        selectSupportModel: "Select support model",
+
         back: "Back",
         firstTitle: "Plug into power outlet",
         firstDescription: (deviceType) => `Install ${deviceType} as close to the center of main floor to maximize Wi-Fi coverage.`,
@@ -26,6 +28,8 @@ const locales ={
     },
 
     fr: {
+        selectSupportModel: "Sélectionner le modèle de soutien",
+
         back: "Retour",
         firstTitle: "Branchez sur une prise de courant",
         firstDescription: (deviceType) => `Installez ${deviceType} aussi près que possible du centre du rez-de-chaussée pour maximiser la couverture Wi-Fi.`,
