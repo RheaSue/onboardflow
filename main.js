@@ -46,7 +46,7 @@ function mapDeviceTypeToIndex(deviceType) {
 }
 
 function initPage() {
-	g_l_supportModelListArr = g_c_supportModelListString.length > 0 ? g_c_supportModelListString.split(',') : null;
+	g_l_supportModelListArr = (g_c_supportModelListString&&g_c_supportModelListString.length > 0) ? g_c_supportModelListString.split(',') : null;
 	console.log(g_l_supportModelListArr);
 
 	if (g_l_supportModelListArr && g_l_supportModelListArr.length > 0) {

@@ -397,10 +397,6 @@ list.js
     font-size: clamp(1.6rem, 100vw / 29.5, 2.8rem);
 }
 
-.listItem.selected {
-    background-color: var(--theme-10-minor-color); /* 初始选中项背景色 */
-}
-
 .listItem-image {
     width: clamp(7.5rem, 100vw / 6.5, 10rem);
     margin-right: 6px;

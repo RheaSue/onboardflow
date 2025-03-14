@@ -4,7 +4,7 @@ function renderList(msoName, supportModelListArr, language) {
 
     // 渲染头部
     const header = renderListHeader(msoName, localizedTexts);
-    const mainContent = renderScrollList(supportModelListArr, language);
+    const mainContent = renderScrollList(supportModelListArr);
 
     // 将渲染好的内容插入到页面
     document.getElementById('content-container').innerHTML = `
@@ -25,11 +25,10 @@ function renderListHeader(msoName, localizedTexts) {
     `;
 }
 
-function renderScrollList(supportModelListArr, language) {
+function renderScrollList(supportModelListArr) {
     const items = supportModelListArr.map((deviceTypeName) => {
-        const isSelected = deviceTypeName === g_l_deviceType ? "selected" : "";
         return `
-        <li class="listItem ${isSelected}">
+        <li class="listItem">
             <img class="listItem-image" src="src/images/general/${deviceTypeName.toLowerCase()}.png" alt="${deviceTypeName}" />
             <span>${deviceTypeName}</span>
         </li>`;
@@ -49,11 +48,6 @@ function listItemAction(index) {
 
     listItems.forEach((item, i) => {    
         item.addEventListener("click", () => {
-            // 移除其他选中项的背景色
-            listItems.forEach((el) => el.classList.remove('selected'));
-
-            // 设置当前点击项为选中项
-            item.classList.add('selected');
 
             console.log(item.textContent.trim());
 
